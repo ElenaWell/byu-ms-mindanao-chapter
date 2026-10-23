@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 :root {
   --color-navy: #002E5D;
@@ -1360,385 +1361,707 @@ p {
   }
 }
 
-/* =========================================================
-   CONSOLIDATED SITE OVERRIDES
-   Edit these values instead of adding duplicate CSS rules.
-   ========================================================= */
 
-:root {
-  /* Main controls for regular body copy */
-  --body-text-size: 20px;
-  --body-text-line-height: 1.8;
+/* 
+   TYPOGRAPHY & READABILITY POLISH
+ */
 
-  /* Header sizing */
-  --header-logo-width: 600px;
-  --nav-text-size: 25px;
-  --join-button-text-size: 24px;
+/* Stronger default body text */
 
-  /* Supporting copy */
-  --supporting-text-size: 20px;
+/* Make regular paragraphs easier to read */
+/* Clearer section headings */
+h2,
+h3,
+h4 {
+  color: #002E5D;
 }
 
-/* HEADER LAYOUT — logo pushed to the left */
-.site-header .nav-container {
-  width: 100%;
-  max-width: none;
-  min-height: var(--header-height);
-  margin: 0;
-  padding: 0 24px 0 0;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-}
-
-.site-header .brand {
-  margin: 0 auto 0 0;
-  padding: 0;
-  flex: 0 0 auto;
-}
-
-.site-header .brand img {
-  display: block;
-  width: var(--header-logo-width);
-  max-width: none;
-  height: auto;
-}
-
-/* NAVIGATION — gold interaction, no bars or underlines */
-.site-header .main-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(12px, 1.8vw, 28px);
-}
-
-.site-header .main-nav a {
-  position: static;
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 0;
-  border: 0;
-  border-bottom: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  text-decoration: none;
-  color: var(--color-slate-blue);
-  font-size: var(--nav-text-size);
-  font-weight: 600;
-  line-height: 1.5;
-  white-space: nowrap;
-  transition: color 180ms ease;
-}
-
-.site-header .main-nav a::before,
-.site-header .main-nav a::after {
-  content: none;
-  display: none;
-}
-
-.site-header .main-nav a:hover,
-.site-header .main-nav a[aria-current="page"] {
-  background: transparent;
-  color: var(--color-gold);
-}
-
-.site-header .main-nav a[aria-current="page"] {
+/* Make section labels such as "01 EDUCATION" stand out */
+.eyebrow,
+.section-label,
+.section-kicker,
+.section-number {
+  font-size: 0.88rem;
   font-weight: 700;
+  letter-spacing: 0.12em; /* I can see the changes here. Whereas, the fontsize is otherwise or I may not be very good at setting em sizes. */
+  line-height: 1.5;
 }
 
-.site-header .join-button {
-  flex-shrink: 0;
-  font-size: var(--join-button-text-size);
-  padding: 15px 20px;
-  min-height: 54px;
+/* Ensure section numbers are visible without overpowering headings */
+.section-number {
+  color: #002E5D;
+  font-variant-numeric: tabular-nums;
 }
 
-/* REGULAR BODY COPY
-   Change --body-text-size above to control standard paragraphs.
-   Special display text is sized separately below. */
-body {
-  font-size: var(--body-text-size);
-  line-height: var(--body-text-line-height);
-}
-
-main p:not(.eyebrow):not(.card-kicker):not(.hero-tagline),
-main li,
-main dd,
-main dt,
-main blockquote {
-  font-size: var(--body-text-size);
-  line-height: var(--body-text-line-height);
-}
-
-/* Readable text on light sections */
-.intro-copy > p:not(.eyebrow),
-.section-heading-description,
-.feature-card > p:not(.card-kicker),
-.spotlight-copy > p:not(.eyebrow),
-.career-copy > p:not(.eyebrow) {
-  font-size: var(--supporting-text-size);
+/* Stronger supporting text under section headings */
+.section-heading-description {
+  color: #202B38;
+  font-size: 1.08rem;
   line-height: 1.8;
-  color: #172638;
 }
 
-/* HERO — preserve white text over the dark background */
-.hero .hero-eyebrow {
-  color: #D1DDEC;
-}
-
-.hero .hero-tagline {
-  max-width: 750px;
-  color: #FFFFFF;
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.hero .hero-description {
-  max-width: 650px;
-  color: #E0E9F3;
-  font-size: var(--supporting-text-size);
+/* Improve feature and resource card readability */
+.feature-card > p:not(.card-kicker) {
+  color: #202B38;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
-/* CHAPTER INTRO — dark text on the white background */
-.intro-copy .eyebrow {
-  color: var(--color-slate-blue);
+.card-kicker {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
-.intro-copy h2,
-.intro-copy h2 span {
-  color: var(--color-navy);
+/* Captions and supporting image text */
+.intro-photo figcaption {
+  color: #374151;
+  font-size: 0.9rem; /* I can't see the changes of this either */
+  line-height: 1.6;
 }
 
-.intro-copy > p:not(.eyebrow) {
-  max-width: 680px;
-  margin-bottom: 24px;
-  color: #172638;
+/* Links should be readable and clearly interactive */
+.text-link {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-/* FEATURED DESTINATIONS */
-.section-heading {
-  display: block;
-  margin-bottom: 48px;
+/* Improve footer readability while keeping it secondary */
+.site-footer {
+  font-size: 0.95rem;
 }
 
-.section-heading h2 {
-  max-width: 900px;
-  margin-bottom: 20px;
+.footer-disclaimer {
+  font-size: 0.82rem;
+  line-height: 1.7;
 }
 
-.section-heading-description {
-  max-width: 780px;
-  margin: 0;
-  color: #202B38;
+/* Preserve contrast for text over the dark hero */
+.hero .eyebrow,
+.hero p {
+  color: #FFFFFF;
 }
 
-.feature-card > p:not(.card-kicker) {
-  color: #202020;
+/* Mobile readability */
+@media (max-width: 520px) {
+  body {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .section-heading-description {
+    font-size: 1rem;
+  }
+
+  .feature-card > p:not(.card-kicker) {
+    font-size: 0.98rem;
+  }
+
+  .eyebrow,
+  .section-label,
+  .section-kicker,
+  .section-number {
+    font-size: 0.82rem;
+  }
 }
 
-.feature-card h3 {
-  font-size: 32px;
-  line-height: 1.25;
+
+/* 
+   GLOBAL TYPOGRAPHY — SITE-WIDE READABILITY
+ */
+
+/* 1. Default text across the entire website. I CAN SEE THE CHANGES IN EDITING THIS ONE */
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* SECTION HEADINGS AND SMALL LABELS */
-.section h2,
-.join-section h2 {
-  font-size: clamp(3rem, 5vw, 4rem);
-  line-height: 1.12;
+body {
+  color: #111827;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
+/* 2. ALL paragraphs, including nested content */
+p,
+li,
+dd,
+dt,
+figcaption,
+blockquote {
+  color: #111827;
+  line-height: 1.8;
+}
+
+/* 3. Supporting descriptions and card text */
+.section-heading-description,
+.feature-card p,
+.feature-card > p:not(.card-kicker),
+.career-copy p,
+.intro-copy p,
+.scholarship-copy p {
+  color: #111827;
+  line-height: 1.85;
+}
+
+/* 4. Small labels should still be readable */
 .eyebrow,
-.card-kicker,
-.marker-label {
-  font-size: 15px;
+.section-label,
+.section-kicker,
+.section-number,
+.card-kicker {
   font-weight: 700;
   line-height: 1.6;
 }
 
-/* JOIN SECTION — white text on navy */
+/* 5. Navigation and interactive text */
+.main-nav a {
+  font-size: 1rem;
+}
+
+button,
+.button,
+.btn,
+.text-link {
+  font-weight: 700;
+}
+
+/* 6. Image captions and supplementary information */
+figcaption,
+.intro-photo figcaption {
+  color: #1F2937;
+  line-height: 1.7;
+}
+
+/* 7. Footer text — readable, not microscopic */
+.site-footer p,
+.site-footer a {
+  line-height: 1.8;
+}
+
+
+/* 8. Text on dark backgrounds must remain light */
+.hero p,
+.hero .eyebrow,
+.join-cta p,
+.site-footer p,
+.site-footer a {
+  color: #FFFFFF;
+}
+/* 9. /* I deleted the unnecessary heading spacing here */
+
+
+/* 10. Mobile: readable without overwhelming the layout */
+@media (max-width: 820px) {
+ 
+  p,
+  li,
+  dd,
+  dt,
+  blockquote,
+  .section-heading-description,
+  .feature-card p,
+  .career-copy p,
+  .intro-copy p,
+  .scholarship-copy p {
+    line-height: 1.8;
+  }
+
+  
+}
+
+@media (max-width: 520px) {
+  
+  p,
+  li,
+  dd,
+  dt,
+  blockquote,
+  .section-heading-description,
+  .feature-card p,
+  .career-copy p,
+  .intro-copy p,
+  .scholarship-copy p {
+    line-height: 1.75;
+  }
+
+ 
+}
+
+/* 
+   FINAL WEBSITE POLISH
+   Adjust the values marked "EDIT SIZE HERE" to customize.
+   Keep this block at the VERY BOTTOM of style.css.
+*/
+
+/* HEADER LOGO — BIGGER HORIZONTAL VERSION */
+
+.brand img {
+  width: 700px !important; /* EDIT DESKTOP SIZE HERE I edited this */
+  max-width: none !important;
+  height: auto !important;
+  display: block;
+}
+  
+/* HEADER: CONTROL LEFT POSITION */
+.site-header .nav-container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 24px 0 0 !important;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-header .brand {
+  margin: 0 auto 0 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0;
+}
+
+
+/* Tablet */
+@media (max-width: 900px) {
+  .brand img {
+    width: 200px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .brand img {
+    width: 160px !important;
+  }
+}
+
+
+/* 
+   2. NAVIGATION TABS
+   Home | About Us | Scholarships | Career Resources
+   EDIT SIZE HERE: 19px desktop; 16px mobile. I EDITED THIS KEEP THE GOLD BARS.
+ */
+
+.main-nav {
+  gap: clamp(16px, 1.8vw, 28px);
+}
+
+.main-nav a {
+  font-size: 25px !important; /* EDIT SIZE HERE */
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+}
+
+.join-button {
+  font-size: 24px !important; /* EDIT JOIN BUTTON SIZE HERE */
+  padding: 15px 20px !important;
+  min-height: 54px !important;
+}
+
+
+/* NAVIGATION — PREMIUM POLISH */
+
+.main-nav {
+  align-items: center;
+}
+
+.main-nav a {
+  position: relative;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+/* Animated underline */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #F2CD00;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+/* Hover and keyboard focus */
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Current page */
+.main-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* I deleted the 'remove golden bars' here */
+
+
+/* Keep the current page distinguishable */
+.main-nav a[aria-current="page"] {
+  color: #F2CD00 !important;
+}
+
+/* Keyboard accessibility */
+.main-nav a:focus-visible {
+  outline: 2px solid #F2CD00;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+/* 
+   3. MAIN HERO: "MINDANAO CHAPTER"
+   EDIT SIZE HERE: increase 10vw or maximum 9.5rem
+   if you want the title even larger.
+ */
+
+.hero h1 {
+  font-size: clamp(5rem, 9.5vw, 9.5rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.065em;
+}
+
+/* "Growing leaders. Strengthening communities."
+   EDIT SIZE HERE: 32px minimum, 44px maximum. */
+
+.hero-tagline {
+  max-width: 750px !important;
+  font-size: clamp(2rem, 3.2vw, 2.75rem) !important;
+  line-height: 1.3 !important;
+  font-weight: 600 !important;
+}
+
+/* Hero introductory paragraph.
+   EDIT SIZE HERE: 21px desktop. */
+
+.hero-description {
+  max-width: 650px !important;
+  font-size: 21px !important;
+  line-height: 1.75 !important;
+}
+
+
+/* 
+   4. CHAPTER INTRODUCTION
+   "Building connections and growing together in Mindanao."
+   Make the paragraph larger and easier to scan.
+ */
+
+.intro-copy > p:not(.eyebrow) {
+  max-width: 680px !important;
+  font-size: 24px !important; /* EDIT PARAGRAPH SIZE HERE */
+  line-height: 1.8 !important;
+  color: #111827 !important;
+  margin-bottom: 24px !important;
+}
+
+
+/* 
+   5. FEATURED DESTINATIONS HEADING + DESCRIPTION
+   "Resources to help you learn, prepare, and grow with purpose."
+   Place the description BELOW the heading, not awkwardly
+   floating beside it.
+*/
+
+.section-heading {
+  display: block !important;
+  margin-bottom: 48px !important;
+}
+
+.section-heading h2 {
+  max-width: 900px;
+  margin-bottom: 20px !important;
+}
+
+/* EDIT DESCRIPTION SIZE HERE: 21px desktop. */
+
+.section-heading-description {
+  max-width: 780px !important;
+  margin: 0 !important;
+  font-size: 21px !important;
+  line-height: 1.75 !important;
+  color: #202B38 !important;
+}
+
+/* 
+   6. ALL REGULAR PARAGRAPHS
+   EDIT SIZE HERE: 20px desktop, 18px mobile.
+   Near-black text on light backgrounds.
+*/
+
+body {
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+  color: #111111;
+}
+
+main p,
+main li,
+main dd,
+main dt,
+main blockquote {
+  font-size: 20px !important; /* EDIT BODY SIZE HERE */
+  line-height: 1.8 !important;
+  color: #111111 !important;
+}
+
+/* Resource cards */
+
+.feature-card > p:not(.card-kicker) {
+  font-size: 19px !important; /* THIS IS WORKING */
+  line-height: 1.8 !important;
+  color: #202020 !important;
+}
+
+.feature-card h3 {
+  font-size: 32px !important; /* EDIT CARD HEADING SIZE HERE */
+  line-height: 1.25 !important;
+}
+
+/* Scholarship and Forage descriptions */
+
+.spotlight-copy > p:not(.eyebrow),
+.career-copy > p:not(.eyebrow) {
+  font-size: 20px !important; /* THIS IS WORKING */
+  line-height: 1.8 !important;
+  color: #202020 !important;
+}
+
+
+/* 
+   7. SECTION HEADINGS
+   EDIT SIZE HERE: desktop 48–64px.
+*/
+
+.section h2,
+.join-section h2 {
+  font-size: clamp(3rem, 5vw, 4rem) !important;
+  line-height: 1.12 !important;
+}
+
+/* Section labels such as 01 EDUCATION */
+
+.eyebrow,
+.card-kicker,
+.marker-label {
+  font-size: 15px !important; /* EDIT LABEL SIZE HERE. THIS IS WORKING */
+  font-weight: 700 !important;
+  line-height: 1.6 !important;
+}
+
+
+/* 
+   8. "YOUR NEXT CHAPTER" — WHITE TEXT. IT MUST BE IN WHITE TEXT. SO DELETE THE RULE THAT MAKES IT BLACK.
+   IMPORTANT: overrides global paragraph color rules.
+    */
+
 .join-section,
 .join-section h2,
 .join-section p,
 .join-section .eyebrow,
-.join-section .join-copy {
-  color: #FFFFFF;
+.join-section .join-copy,
+.join-section .join-copy > p:not(.eyebrow) {
+  color: #FFFFFF !important;
 }
+
+/* EDIT JOIN SECTION PARAGRAPH SIZE HERE */
 
 .join-section .join-copy > p:not(.eyebrow) {
-  max-width: 800px;
-  font-size: var(--supporting-text-size);
-  line-height: 1.8;
-  color: #FFFFFF;
+  max-width: 800px !important;
+  font-size: 21px !important; /* THIS IS WORKING */
+  line-height: 1.8 !important;
 }
 
-/* Links and buttons */
+/* Keep the join section heading prominent */
+
+.join-section h2 {
+  font-size: clamp(3rem, 5vw, 4rem) !important;
+}
+
+
+/* 
+   9. LINKS AND BUTTONS
+ */
+
 .text-link,
 .hero-text-link,
 .button {
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 18px !important; /* EDIT LINK/BUTTON SIZE HERE. THIS IS WORKING! */
+  line-height: 1.5 !important;
 }
 
-/* Footer text */
-.site-footer .footer-brand span {
-  color: #FFFFFF;
-}
 
-.site-footer .footer-message,
-.site-footer .footer-email,
-.site-footer .footer-email a,
-.site-footer .copyright {
-  color: #FFFFFF;
-}
+/* 
+   10. RESPONSIVE SIZING
+   These rules keep the larger typography from breaking
+   the layout on tablets and phones.
+*/
 
-/* TABLET */
-@media (max-width: 1200px) {
-  :root {
-    --header-logo-width: 260px;
-    --nav-text-size: 18px;
-    --join-button-text-size: 18px;
-    --supporting-text-size: 18px;
-    --body-text-size: 18px;
+@media (max-width: 1100px) {
+  .brand img {
+    width: 115px !important; /* EDIT TABLET LOGO SIZE HERE */
   }
 
-  .site-header .nav-container {
-    gap: 18px;
+  .main-nav {
+    gap: 14px; /* THIS IS WORKING */
   }
 
-  .site-header .main-nav {
-    gap: 12px;
+  .main-nav a {
+    font-size: 16px !important; /* THIS IS WORKING */
   }
 
-  .site-header .join-button {
-    padding: 12px 14px;
+  .hero h1 {
+    font-size: clamp(4.5rem, 8.5vw, 7rem) !important;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.8rem, 3vw, 2.3rem) !important;
   }
 }
 
 @media (max-width: 820px) {
-  :root {
-    --header-logo-width: 200px;
-    --nav-text-size: 16px;
-    --join-button-text-size: 16px;
-    --supporting-text-size: 18px;
-    --body-text-size: 18px;
+  .brand img {
+    width: 100px !important; /* EDIT TABLET LOGO SIZE HERE */
   }
 
-  .site-header .nav-container {
-    padding-right: 16px;
-    gap: 12px;
-  }
-
-  .site-header .main-nav {
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .site-header .main-nav a {
-    white-space: normal;
+  .main-nav a {
+    font-size: 17px !important;
   }
 
   .hero h1 {
-    font-size: clamp(4rem, 10vw, 6rem);
+    font-size: clamp(4rem, 10vw, 6rem) !important;
   }
 
-  .hero .hero-tagline {
-    font-size: clamp(1.7rem, 4vw, 2.2rem);
+  .hero-tagline {
+    font-size: clamp(1.7rem, 4vw, 2.2rem) !important;
   }
 
-  .hero .hero-description,
+  .hero-description,
   .intro-copy > p:not(.eyebrow),
   .section-heading-description,
   .spotlight-copy > p:not(.eyebrow),
   .career-copy > p:not(.eyebrow),
   .join-section .join-copy > p:not(.eyebrow) {
-    font-size: 18px;
+    font-size: 18px !important;
+  }
+
+  main p,
+  main li,
+  main dd,
+  main dt,
+  main blockquote {
+    font-size: 18px !important;
   }
 }
 
-/* MOBILE */
 @media (max-width: 520px) {
-  :root {
-    --header-logo-width: 160px;
-    --nav-text-size: 14px;
-    --join-button-text-size: 15px;
-    --supporting-text-size: 17px;
-    --body-text-size: 17px;
+  .brand img {
+    width: 82px !important; /* EDIT MOBILE LOGO SIZE HERE */
   }
 
-  .site-header .nav-container {
-    flex-wrap: wrap;
-    padding: 8px 12px;
-    justify-content: space-between;
+  .main-nav {
+    gap: 5px 15px;
   }
 
-  .site-header .brand {
-    margin-right: auto;
+  .main-nav a {
+    font-size: 15px !important;
   }
 
-  .site-header .main-nav {
-    order: 3;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 4px 14px;
-  }
-
-  .site-header .main-nav a {
-    padding: 6px 0;
-  }
-
-  .site-header .join-button {
-    padding: 10px 12px;
-    min-height: 44px;
+  .join-button {
+    font-size: 15px !important;
+    padding: 10px 12px !important;
   }
 
   .hero h1 {
-    font-size: clamp(3.5rem, 13vw, 4.7rem);
+    font-size: clamp(3.5rem, 13vw, 4.7rem) !important;
   }
 
-  .hero .hero-tagline {
-    font-size: 25px;
+  .hero-tagline {
+    font-size: 25px !important;
   }
 
-  .hero .hero-description,
+  .hero-description,
   .intro-copy > p:not(.eyebrow),
   .section-heading-description,
   .spotlight-copy > p:not(.eyebrow),
   .career-copy > p:not(.eyebrow),
   .join-section .join-copy > p:not(.eyebrow) {
-    font-size: 17px;
+    font-size: 17px !important;
+  }
+
+  main p,
+  main li,
+  main dd,
+  main dt,
+  main blockquote {
+    font-size: 17px !important;
   }
 
   .section h2,
   .join-section h2 {
-    font-size: clamp(2.3rem, 9vw, 3rem);
+    font-size: clamp(2.3rem, 9vw, 3rem) !important;
   }
 
   .feature-card h3 {
-    font-size: 27px;
+    font-size: 27px !important;
   }
 
   .feature-card > p:not(.card-kicker) {
-    font-size: 17px;
+    font-size: 17px !important;
   }
 }
 
-/* Accessibility: avoid motion when the user requests reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* 
+   FINAL TEXT COLOR FIXES
+   KEEP THESE COLORS. I EDITED THIS
+*/
+
+/* HERO — white text on the dark background */
+.hero .hero-eyebrow,
+.hero .hero-tagline,
+.hero .hero-description {
+  color: #FFFFFF !important;
 }
+
+/* CHAPTER INTRODUCTION — dark text on white */
+.intro-copy .eyebrow {
+  color: #425A76 !important;
+}
+
+.intro-copy h2,
+.intro-copy h2 span {
+  color: #002E5D !important;
+}
+
+.intro-copy > p:not(.eyebrow) {
+  color: #172638 !important;
+}
+
+/* Photo caption */
+.intro-photo figcaption {
+  color: #374151 !important;
+}
+
+/* JOIN SECTION — white text on dark navy */
+.join-section .eyebrow,
+.join-section h2,
+.join-section .join-copy > p {
+  color: #FFFFFF !important;
+}
+
+/* FOOTER — white branding and tagline */
+.site-footer .footer-brand span,
+.site-footer .footer-message,
+.site-footer .footer-email,
+.site-footer .footer-email a,
+.site-footer .copyright {
+  color: #FFFFFF !important;
+}
+
+
+
+
