@@ -646,17 +646,20 @@ button:focus-visible {
 }
 
 .section-heading {
-    margin-bottom: 24px;
+    margin-bottom: 36px;
 }
 
 .featured .section-heading-description {
-    margin-bottom: 48px;
+    margin-bottom: 52px;
+    font-size: 28px;
+    line-height: 1.6;
 }
+
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
+    gap: 32px;
 }
 
 .feature-card {
@@ -664,7 +667,7 @@ button:focus-visible {
     flex-direction: column;
     align-items: flex-start;
     min-width: 0;
-    padding: 36px;
+    padding: 42px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
     background: var(--color-white);
@@ -674,26 +677,28 @@ button:focus-visible {
         border-color var(--transition);
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-gold);
-    box-shadow: 0 16px 36px rgb(6 26 50 / 9%);
-}
-
 .card-icon {
     display: grid;
-    width: 60px;
-    height: 60px;
-    margin-bottom: 28px;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 30px;
     place-items: center;
     border-radius: var(--radius-small);
     background: var(--color-pale-blue);
     color: var(--color-navy);
 }
 
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-gold);
+    box-shadow: 0 16px 36px rgb(6 26 50 / 9%);
+}
+
+
 .card-kicker {
     margin-bottom: 14px;
-    color: var(--color-slate);
+    color: var(--color-navy);
 }
 
 .feature-card h3 {
@@ -706,12 +711,28 @@ button:focus-visible {
 .feature-card p {
     margin-bottom: 24px;
     color: var(--color-text);
-    font-size: 19px;
+    font-size: 24px;
     line-height: 1.75;
 }
 
 .feature-card .text-link {
     margin-top: auto;
+    font-size: 24px;
+    font-weight: 600;
+    gap: 10px;
+}
+
+
+.feature-card .text-link {
+    margin-top: auto;
+    transition:
+        color 220ms ease,
+        text-shadow 220ms ease;
+}
+
+.feature-card .text-link:hover {
+    color: var(--color-gold);
+    text-shadow: 0 0 10px rgb(242 205 0 / 45%);
 }
 
 /*
@@ -747,16 +768,32 @@ button:focus-visible {
     text-transform: uppercase;
 }
 
+
 .spotlight-heading > .eyebrow {
-    max-width: 420px;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-right: -200px;
     color: var(--color-white);
-    font-size: clamp(1.8rem, 3.2vw, 3rem);
+    font-size: clamp(1.1rem, 1.8vw, 1.6rem);
     font-weight: 700;
     letter-spacing: 0.04em;
-    line-height: 1.05;
+    line-height: 1.2;
     text-align: right;
-    text-wrap: balance;
+}
+
+.spotlight-heading > .eyebrow::before {
+    content: "";
+    display: inline-block;
+    flex: 0 0 42px;
+    height: 3px;
+    background: var(--color-gold);
+}
+
+
+.spotlight-heading .spotlight-marker {
+    transform: translateY(130px);
 }
 
 /* Main two-column composition */
@@ -911,8 +948,21 @@ button:focus-visible {
 
 .career-copy .eyebrow,
 .career-copy .section-kicker {
-    margin-bottom: 20px;
+    margin-left: 0;
     color: var(--color-slate);
+}
+.career-copy .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.career-copy .eyebrow::before {
+    content: "";
+    display: inline-block;
+    flex: 0 0 42px;
+    height: 3px;
+    background: var(--color-gold);
 }
 
 .career-copy h2 {
@@ -928,10 +978,30 @@ button:focus-visible {
     line-height: 1.8;
 }
 
-.career-copy .button {
+/* Career Spotlight — Forage link */
+.career-copy .text-link {
     margin-top: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    transition: color 220ms ease, text-shadow 220ms ease;
 }
 
+.career-copy .text-link:hover {
+    color: var(--color-gold);
+    text-shadow: 0 0 10px rgb(242 205 0 / 55%);
+}
+
+.career-copy .text-link span {
+    display: inline-block;
+    transition: transform 220ms ease;
+}
+
+.career-copy .text-link:hover span {
+    transform: translateX(5px);
+}
 /* 
    11. JOIN SECTION
  */
