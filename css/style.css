@@ -356,9 +356,9 @@ button:focus-visible {
     color: var(--color-deep-navy);
 }
 
-/* =========================================
+/* 
    6. HERO SECTION
-   ========================================= */
+ */
 
 
 
@@ -444,11 +444,11 @@ button:focus-visible {
 
 
 .hero-description {
-    max-width: 560px;
+    max-width: 580px;
     margin: 23px 0 31px;
     color: #E0E9F3;
-    font-size: 1.02rem;
-    line-height: 1.9;
+    font-size: 1.6rem;
+    line-height: 1.8;
 }
 
 .hero-actions {
@@ -457,6 +457,11 @@ button:focus-visible {
     align-items: center;
     gap: 24px;
     margin-top: 0;
+}
+
+.hero .button-light {
+    font-size: 1.35rem;
+    padding: 17px 28px;
 }
 
 .hero .button-primary {
@@ -470,29 +475,43 @@ button:focus-visible {
     color: var(--color-deep-navy);
 }
 
+.hero .button-light {
+    transition:
+        background-color 220ms ease,
+        color 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.hero .button-light:hover {
+    background-color: var(--color-deep-navy);
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.3);
+}
+
 .hero-text-link {
     display: inline-flex;
     align-items: center;
     gap: 9px;
     min-height: 48px;
     color: var(--color-white);
-    font-size: 0.93rem;
+    font-size: 1.35rem;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
 .hero-text-link span {
-    transition: transform 0.2s ease;
+    transition: transform 220ms ease;
 }
 
 .hero-text-link:hover {
-    color: #DDE8F4;
+    color: var(--color-gold);
 }
 
 .hero-text-link:hover span {
     transform: translateX(4px);
 }
-
 /* Mount Apo artwork */
 
 .hero-visual {
@@ -556,9 +575,9 @@ button:focus-visible {
 }
 
 
-/* =========================================
+/* 
    7. INTRODUCTION SECTION
-   ========================================= */
+ */
 
 .intro {
     background: var(--color-white);
@@ -590,7 +609,7 @@ button:focus-visible {
 .intro-copy p {
     margin-bottom: 24px;
     color: var(--color-text);
-    font-size: 24px;
+    font-size: 26px;
     line-height: 1.75;
 }
 
@@ -617,9 +636,10 @@ button:focus-visible {
 }
 
 
-/* =========================================
+
+/* 
    8. FEATURED SECTION & CARDS
-   ========================================= */
+*/
 
 .featured {
     background: var(--color-light-background);
@@ -694,9 +714,9 @@ button:focus-visible {
     margin-top: auto;
 }
 
-/* =========================================
+/*
    9. SPOTLIGHT SECTION
-   ========================================= */
+ */
 
 .spotlight {
     overflow: hidden;
@@ -704,6 +724,42 @@ button:focus-visible {
     color: var(--color-white);
 }
 
+/* Editorial heading */
+.spotlight-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 52px;
+}
+
+.spotlight-heading .spotlight-marker {
+    margin: 28px 0 0;
+    color: var(--color-gold);
+}
+
+.marker-label {
+    display: inline-block;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.spotlight-heading > .eyebrow {
+    max-width: 420px;
+    margin: 0;
+    color: var(--color-white);
+    font-size: clamp(1.8rem, 3.2vw, 3rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+    text-align: right;
+    text-wrap: balance;
+}
+
+/* Main two-column composition */
 .spotlight-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
@@ -711,47 +767,121 @@ button:focus-visible {
     gap: 72px;
 }
 
-.spotlight-marker {
-    margin-bottom: 20px;
-    color: var(--color-gold);
-}
-
-.spotlight-copy {
-    min-width: 0;
-}
-
-.spotlight h2 {
-    margin-bottom: 28px;
-    color: var(--color-white);
-    font-size: clamp(3rem, 5vw, 4rem);
-}
-
-.spotlight-copy p {
-    margin-bottom: 24px;
-    color: var(--color-white);
-    font-size: 20px;
-    line-height: 1.8;
-}
-
-.spotlight-copy .button {
-    margin-top: 12px;
-}
-
 .spotlight-image {
     min-width: 0;
 }
 
 .spotlight-image img {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: var(--radius-medium);
     object-fit: cover;
 }
 
+/* Scholarship copy */
+.spotlight-copy {
+    min-width: 0;
+}
 
-/* =========================================
+.spotlight h2 {
+    margin-bottom: 24px;
+    color: var(--color-white);
+    font-size: clamp(2.5rem, 4.2vw, 4rem);
+    line-height: 1.12;
+}
+
+.spotlight h2 span {
+    color: var(--color-gold);
+}
+
+.spotlight-copy p {
+    margin-bottom: 28px;
+    color: var(--color-white);
+    font-size: 1.375rem;
+    line-height: 1.8;
+}
+
+/* Refined CTA using the existing button styles */
+.spotlight-copy .button {
+    margin-top: 4px;
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.spotlight-copy .button:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .spotlight-layout {
+        gap: 40px;
+    }
+
+    .spotlight-heading {
+        margin-bottom: 40px;
+    }
+
+    .spotlight-copy p {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+}
+
+@media (max-width: 640px) {
+    .spotlight-heading {
+        gap: 20px;
+        margin-bottom: 32px;
+    }
+
+    .spotlight-heading .spotlight-marker {
+        margin-top: 12px;
+    }
+
+    .marker-label {
+        font-size: clamp(1.25rem, 5vw, 2rem);
+        letter-spacing: 0.02em;
+    }
+
+    .spotlight-heading > .eyebrow {
+        max-width: 55%;
+        font-size: clamp(1.25rem, 5vw, 1.8rem);
+    }
+
+    .spotlight-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .spotlight h2 {
+        margin-bottom: 20px;
+        font-size: clamp(2.25rem, 9vw, 3rem);
+    }
+
+    .spotlight-copy p {
+        margin-bottom: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spotlight-copy .button {
+        transition: none;
+    }
+
+    .spotlight-copy .button:hover {
+        transform: none;
+    }
+}
+.spotlight-copy .button-primary:hover {
+    background-color: var(--color-gold);
+    color: var(--color-deep-navy);
+}
+
+/* 
    10. CAREER SPOTLIGHT SECTION
-   ========================================= */
+*/
 
 .career-spotlight {
     background: var(--color-pale-blue);
@@ -802,9 +932,9 @@ button:focus-visible {
     margin-top: 12px;
 }
 
-/* =========================================
+/* 
    11. JOIN SECTION
-   ========================================= */
+ */
 
 .join-section {
     background: var(--color-navy);
@@ -854,9 +984,9 @@ button:focus-visible {
 }
 
 
-/* =========================================
+/* 
    12. SITE FOOTER
-   ========================================= */
+*/
 
 /* FOOTER */
 
@@ -959,9 +1089,9 @@ button:focus-visible {
 
 
 
-/* =========================================
+/* 
    13. RESPONSIVE DESIGN
-   ========================================= */
+ */
 
 
 /* ---------- LARGE TABLETS & SMALL LAPTOPS ---------- */
@@ -1306,3 +1436,9 @@ button:focus-visible {
     }
 }
 
+/* INTRO "GETTING TO KNOW OUR CHAPTER" */
+/* INTRO SECTION — LINK */
+.intro-copy .text-link {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
