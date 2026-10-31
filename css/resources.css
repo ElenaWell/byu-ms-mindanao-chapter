@@ -1,0 +1,637 @@
+/*
+   CAREER RESOURCES PAGE
+
+   TYPOGRAPHY GUIDE
+   ----------------
+   The font sizes below follow the sizing system in scholarships.css.
+   Look for the [SIZE] comments to find the values you can adjust.
+
+   Desktop reference:
+   Hero eyebrow:             1rem
+   Hero description:         1.5rem
+   Hero note:                1.5rem
+   Section eyebrow:          1.5rem
+   Section heading:          clamp(3.7rem, 4.5vw, 4rem)
+   Section body:             1.75rem
+   Card heading:             clamp(1.65rem, 2vw, 2rem)
+   Card body:                1.5rem
+   Card note:                1.3rem
+
+   Mobile reference:
+   Hero description:         1.1rem
+   Section heading:          clamp(2.3rem, 9vw, 3rem)
+   Section body:             1.1rem
+*/
+
+
+/* 
+   HERO
+ */
+
+.resources-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 85% 35%,
+            rgb(34 76 118 / 45%),
+            transparent 48%
+        ),
+        linear-gradient(
+            112deg,
+            var(--color-deep-navy),
+            var(--color-navy) 72%,
+            #0A2C50
+        );
+    color: var(--color-white);
+}
+
+.resources-hero::after {
+    position: absolute;
+    right: -100px;
+    bottom: -220px;
+    z-index: -1;
+    width: 520px;
+    height: 520px;
+    border: 1px solid rgb(242 205 0 / 22%);
+    border-radius: 50%;
+    content: "";
+    box-shadow:
+        0 0 0 55px rgb(242 205 0 / 5%),
+        0 0 0 110px rgb(242 205 0 / 4%);
+    pointer-events: none;
+}
+
+.resources-hero-content {
+    position: relative;
+    z-index: 1;
+    padding-block: clamp(90px, 12vw, 160px);
+    animation: resources-enter 650ms ease both;
+}
+
+/* [SIZE] Hero eyebrow — Scholarships hero eyebrow: 1rem */
+.resources-hero .eyebrow {
+    margin-bottom: 28px;
+    color: var(--color-gold);
+    font-size: 1rem;
+}
+
+/* [SIZE] Main hero title — intentionally larger display typography */
+.resources-hero h1 {
+    max-width: 1000px;
+    margin-bottom: 28px;
+    color: var(--color-white);
+    font-size: clamp(3.6rem, 8vw, 7rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+}
+
+.resources-hero h1 span {
+    display: block;
+    color: var(--color-gold);
+}
+
+/* [SIZE] Hero description — Scholarships hero description: 1.5rem */
+.resources-hero-description {
+    max-width: 680px;
+    margin-bottom: 32px;
+    color: #E0E9F3;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.resources-hero .button-primary {
+    background: var(--color-gold);
+    color: var(--color-deep-navy);
+}
+
+.resources-hero .button-primary:hover {
+    border-color: var(--color-white);
+    background: var(--color-white);
+}
+
+/* [SIZE] Hero note — Scholarships hero note: 1.5rem */
+.resources-hero-note {
+    max-width: 650px;
+    margin: 24px 0 0;
+    color: #D1DDEC;
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+
+/* 
+   INTRODUCTION
+*/
+
+.resources-intro {
+    background: var(--color-white);
+}
+
+.resources-intro-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 72px;
+}
+
+/* [SIZE] Introduction eyebrow — Scholarships section eyebrow: 1.5rem */
+.resources-intro .eyebrow,
+.resources-section-heading .eyebrow {
+    margin-bottom: 18px;
+    color: var(--color-slate);
+    font-size: 1.5rem;
+}
+
+/* [SIZE] Introduction heading — Scholarships section heading */
+.resources-intro h2 {
+    margin-bottom: 0;
+    font-size: clamp(3.7rem, 4.5vw, 4rem);
+}
+
+/* [SIZE] Introduction paragraph — Scholarships section body: 1.75rem */
+.resources-intro-layout > p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 1.75rem;
+    line-height: 1.9;
+}
+
+
+/* 
+   SECTION HEADINGS
+ */
+
+.resources-section-heading {
+    max-width: 820px;
+    margin-bottom: 48px;
+}
+
+/* [SIZE] Section heading — Scholarships section heading */
+.resources-section-heading .section-heading {
+    margin-bottom: 20px;
+    font-size: clamp(3.7rem, 4.5vw, 4rem);
+}
+
+/* [SIZE] Section description — Scholarships section body: 1.75rem */
+.resources-section-heading .section-heading-description {
+    margin-bottom: 0;
+    color: var(--color-muted);
+    font-size: 1.75rem;
+    line-height: 1.8;
+}
+
+
+/* 
+   FEATURED FORAGE RESOURCE
+*/
+
+.featured-resources {
+    background: var(--color-light-background);
+}
+
+.forage-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-white);
+    box-shadow: 0 18px 45px rgb(6 26 50 / 6%);
+}
+
+.forage-feature-content {
+    padding: clamp(32px, 5vw, 64px);
+}
+
+/* [SIZE] Resource label — Scholarships card category: 0.8rem */
+.resource-label {
+    display: inline-block;
+    margin-bottom: 26px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: var(--color-pale-blue);
+    color: var(--color-navy);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+/* [SIZE] Forage heading — Scholarships card heading */
+.forage-feature h3 {
+    max-width: 650px;
+    margin-bottom: 22px;
+    font-family: var(--font-heading);
+    font-size: clamp(1.65rem, 2vw, 2rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* [SIZE] Forage description — Scholarships card body: 1.5rem */
+.forage-feature-content > p {
+    max-width: 680px;
+    margin-bottom: 28px;
+    color: var(--color-muted);
+    font-size: 1.5rem;
+    line-height: 1.9;
+}
+
+.forage-benefits {
+    display: grid;
+    gap: 16px;
+    margin: 0 0 36px;
+    padding: 0;
+    list-style: none;
+}
+
+/* [SIZE] Benefit list — Scholarships card body: 1.5rem */
+.forage-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.forage-benefits li span {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-pale-blue);
+    color: var(--color-navy);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* [SIZE] Forage button — Scholarships card link: 1.4rem */
+.forage-feature-content .button {
+    font-size: 1.4rem;
+}
+
+.forage-feature-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(32px, 4vw, 52px);
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgb(242 205 0 / 13%),
+            transparent 45%
+        ),
+        var(--color-navy);
+    color: var(--color-white);
+}
+
+.forage-aside-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    margin-bottom: 52px;
+    border: 1px solid rgb(242 205 0 / 50%);
+    border-radius: 50%;
+    color: var(--color-gold);
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* [SIZE] Aside eyebrow — small supporting label */
+.forage-aside-eyebrow {
+    margin-bottom: 16px;
+    color: var(--color-gold);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+/* [SIZE] Aside heading — supporting card heading */
+.forage-aside-heading {
+    margin-bottom: 20px;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: clamp(1.65rem, 2vw, 2rem);
+    line-height: 1.3;
+}
+
+/* [SIZE] Aside description — Scholarships card note: 1.3rem */
+.forage-aside-description {
+    margin-bottom: 0;
+    color: #D1DDEC;
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+
+/* 
+   CAREER GUIDANCE
+ */
+
+.career-guidance {
+    background: var(--color-white);
+}
+
+.guidance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.guidance-card {
+    padding: 34px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-white);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.guidance-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-gold);
+    box-shadow: 0 16px 36px rgb(6 26 50 / 8%);
+}
+
+/* [SIZE] Guidance number — Scholarships card number: 1.4rem */
+.guidance-number {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--color-slate);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+}
+
+/* [SIZE] Guidance heading — Scholarships card heading */
+.guidance-card h3 {
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+    font-size: clamp(1.65rem, 2vw, 2rem);
+    line-height: 1.3;
+}
+
+/* [SIZE] Guidance paragraph — Scholarships card body: 1.5rem */
+.guidance-card p {
+    margin-bottom: 0;
+    color: var(--color-muted);
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+
+/* 
+   CLOSING SECTION
+    */
+
+.resources-reminder {
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.resources-reminder-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.resources-reminder-layout > div {
+    max-width: 760px;
+}
+
+/* [SIZE] Closing eyebrow — Scholarships section eyebrow: 1.5rem */
+.resources-reminder .eyebrow {
+    margin-bottom: 20px;
+    color: var(--color-gold);
+    font-size: 1.5rem;
+}
+
+/* [SIZE] Closing heading — Scholarships section heading */
+.resources-reminder h2 {
+    margin-bottom: 24px;
+    color: var(--color-white);
+    font-size: clamp(3.7rem, 4.5vw, 4rem);
+}
+
+/* [SIZE] Closing paragraph — Scholarships section body: 1.75rem */
+.resources-reminder-layout > div > p:last-child {
+    margin-bottom: 0;
+    color: #E0E9F3;
+    font-size: 1.75rem;
+    line-height: 1.9;
+}
+
+/* [SIZE] Closing button — Scholarships reminder button: 1.9rem */
+.resources-reminder .button {
+    flex-shrink: 0;
+    font-size: 1.9rem;
+}
+
+.resources-reminder .button:hover {
+    border-color: var(--color-gold);
+    background: var(--color-gold);
+    color: var(--color-deep-navy);
+}
+
+
+/* 
+   MOTION
+ */
+
+@keyframes resources-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 
+   TABLET
+*/
+
+@media (max-width: 900px) {
+    .resources-intro-layout {
+        gap: 36px;
+    }
+
+    .forage-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .forage-feature-aside {
+        min-height: 300px;
+    }
+
+    .forage-aside-mark {
+        margin-bottom: 30px;
+    }
+
+    .guidance-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .resources-reminder-layout {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 28px;
+    }
+}
+
+
+/* 
+   MOBILE
+ */
+
+@media (max-width: 600px) {
+    .resources-hero-content {
+        padding-block: 80px;
+    }
+
+    /* [SIZE] Mobile hero title */
+    .resources-hero h1 {
+        font-size: clamp(3rem, 12vw, 4.5rem);
+    }
+
+    /* [SIZE] Mobile hero description — Scholarships mobile: 1.1rem */
+    .resources-hero-description {
+        font-size: 1.1rem;
+    }
+
+    /* [SIZE] Mobile hero note */
+    .resources-hero-note {
+        font-size: 1.05rem;
+    }
+
+    .resources-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* [SIZE] Mobile introduction heading — Scholarships mobile heading */
+    .resources-intro h2 {
+        font-size: clamp(2.3rem, 9vw, 3rem);
+    }
+
+    /* [SIZE] Mobile introduction paragraph — Scholarships mobile body: 1.1rem */
+    .resources-intro-layout > p {
+        font-size: 1.1rem;
+    }
+
+    /* [SIZE] Mobile section heading — Scholarships mobile heading */
+    .resources-section-heading .section-heading {
+        font-size: clamp(2.3rem, 9vw, 3rem);
+    }
+
+    /* [SIZE] Mobile section description — Scholarships mobile body: 1.1rem */
+    .resources-section-heading .section-heading-description {
+        font-size: 1.1rem;
+    }
+
+    .forage-feature-content {
+        padding: 28px;
+    }
+
+    /* [SIZE] Mobile Forage heading — Scholarships mobile card heading: 1.65rem */
+    .forage-feature h3 {
+        font-size: 1.65rem;
+    }
+
+    /* [SIZE] Mobile Forage description — Scholarships mobile card body: 1.05rem */
+    .forage-feature-content > p {
+        font-size: 1.05rem;
+    }
+
+    /* [SIZE] Mobile benefit list */
+    .forage-benefits li {
+        font-size: 1.05rem;
+    }
+
+    .forage-feature-content .button {
+        width: 100%;
+        font-size: 1.05rem;
+    }
+
+    .forage-feature-aside {
+        min-height: auto;
+        padding: 32px 28px;
+    }
+
+    /* [SIZE] Mobile aside heading */
+    .forage-aside-heading {
+        font-size: 1.65rem;
+    }
+
+    /* [SIZE] Mobile aside description — Scholarships mobile note: 0.98rem */
+    .forage-aside-description {
+        font-size: 0.98rem;
+    }
+
+    .guidance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guidance-card {
+        padding: 28px;
+    }
+
+    /* [SIZE] Mobile guidance heading — Scholarships mobile card heading: 1.65rem */
+    .guidance-card h3 {
+        font-size: 1.65rem;
+    }
+
+    /* [SIZE] Mobile guidance paragraph — Scholarships mobile card body: 1.05rem */
+    .guidance-card p {
+        font-size: 1.05rem;
+    }
+
+    /* [SIZE] Mobile closing heading — Scholarships mobile heading */
+    .resources-reminder h2 {
+        font-size: clamp(2.3rem, 9vw, 3rem);
+    }
+
+    /* [SIZE] Mobile closing paragraph — Scholarships mobile body: 1.1rem */
+    .resources-reminder-layout > div > p:last-child {
+        font-size: 1.1rem;
+    }
+
+    .resources-reminder .button {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+}
+
+
+/*
+   REDUCED MOTION
+ */
+
+@media (prefers-reduced-motion: reduce) {
+    .resources-hero-content {
+        animation: none;
+    }
+
+    .guidance-card {
+        transition: none;
+    }
+
+    .guidance-card:hover {
+        transform: none;
+    }
+}
