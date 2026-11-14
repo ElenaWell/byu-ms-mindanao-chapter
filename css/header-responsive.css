@@ -1,0 +1,100 @@
+/*
+   HEADER RESPONSIVE DESIGN
+*/
+
+/* LARGE TABLETS & SMALL LAPTOPS */
+@media (max-width: 1100px) {
+    .brand img {
+        width: 420px;
+    }
+
+    .brand-row {
+        gap: 18px;
+    }
+
+    .chapter-identity {
+        padding-left: 18px;
+    }
+
+    .main-nav {
+        gap: 36px;
+    }
+
+    .main-nav a {
+        font-size: 18px;
+    }
+}
+
+/* TABLETS */
+@media (max-width: 820px) {
+    .brand img {
+        width: 340px;
+    }
+
+    .brand-row {
+        gap: 16px;
+    }
+
+    .chapter-identity {
+        padding-left: 16px;
+    }
+
+    .chapter-name {
+        font-size: 1.5rem;
+    }
+
+    .main-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0 28px;
+    }
+
+    .main-nav a {
+        font-size: 17px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 520px) {
+    .brand img {
+        width: 230px;
+    }
+
+    .brand-row {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .chapter-name {
+        font-size: 1.2rem;
+    }
+
+    .chapter-label {
+        margin-top: 6px;
+        font-size: 0.6rem;
+    }
+
+    .main-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0 16px;
+        padding-block: 4px;
+    }
+
+    .main-nav a {
+        min-height: 44px;
+        padding-block: 8px;
+        font-size: 16px;
+    }
+
+    .main-nav a::after {
+        bottom: 5px;
+    }
+
+    .join-button {
+        min-height: 40px;
+        margin-left: auto;
+        padding: 9px 12px;
+        font-size: 0.8rem;
+    }
+}
