@@ -820,7 +820,7 @@ button:focus-visible {
     margin-right: 0;
     text-align: left;
     color: var(--color-white);
-    font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+    font-size: clamp(3rem, 5vw, 4.5rem);
     font-weight: 700;
     letter-spacing: 0.04em;
     line-height: 1.2;
@@ -844,8 +844,8 @@ button:focus-visible {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
     align-items: center;
-    margin-left: 0;
-    margin-right: auto;
+    width: 100%;
+    margin-inline: auto;
     gap: 72px;
 }
 
@@ -961,6 +961,87 @@ button:focus-visible {
     color: var(--color-deep-navy);
 }
 
+
+/* EDUCATION SECTION */
+.education-section {
+    overflow: hidden;
+    background: var(--color-deep-navy);
+    color: var(--color-white);
+}
+
+.education-layout {
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1.15fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 48px;
+}
+.education-section {
+    padding-block: 120px;
+}
+
+.education-image img {
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: var(--radius-medium);
+}
+
+.education-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -50px;
+    color: var(--color-gold);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    text-shadow: 0 4px 18px rgba(242, 205, 0, 0.18);
+    opacity: 0.82;
+    gap: 16px;
+}
+
+.education-image,
+.education-copy {
+    min-width: 0;
+}
+
+.education-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-medium);
+    object-fit: cover;
+}
+
+.education-copy .eyebrow {
+    color: var(--color-gold);
+}
+
+.education-copy h2 {
+    margin-bottom: 24px;
+    color: var(--color-white);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.12;
+}
+
+.education-copy h2 span {
+    color: var(--color-gold);
+}
+
+.education-copy p {
+    margin-bottom: 28px;
+    color: var(--color-white);
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.education-copy .button-primary:hover {
+    background-color: var(--color-gold);
+    color: var(--color-deep-navy);
+    border-color: var(--color-gold);
+}
+
 /* 
    10. CAREER SPOTLIGHT SECTION
 */
@@ -971,11 +1052,10 @@ button:focus-visible {
 
 .career-layout {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+    grid-template-columns: 50px minmax(0, 1.15fr) minmax(0, 0.9fr);
     align-items: center;
-    gap: 72px;
+    gap: 64px;
 }
-
 .career-image {
     min-width: 0;
 }
@@ -1013,7 +1093,7 @@ button:focus-visible {
 .career-copy h2 {
     margin-bottom: 28px;
     color: var(--color-navy);
-    font-size: clamp(2.5rem, 4.2vw, 4rem);
+    font-size: clamp(3rem, 5vw, 4.5rem);
 }
 
 .career-copy p {
@@ -1047,6 +1127,19 @@ button:focus-visible {
 .career-copy .text-link:hover span {
     transform: translateX(5px);
 }
+
+.career-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #477889;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    text-shadow: 0 4px 18px rgba(71, 120, 137, 0.18);
+    opacity: 0.82;
+}
 /* 
    11. JOIN SECTION
  */
@@ -1054,6 +1147,10 @@ button:focus-visible {
 .join-section {
     background: var(--color-navy);
     color: var(--color-white);
+}
+
+.join-section {
+    padding-block: 120px;
 }
 
 .join-layout {
@@ -1071,20 +1168,21 @@ button:focus-visible {
 .join-copy .section-kicker {
     margin-bottom: 20px;
     color: var(--color-gold);
+    font-size: 1.5rem;
 }
 
 .join-copy h2 {
     margin-bottom: 24px;
     color: var(--color-white);
-    font-size: clamp(3rem, 5vw, 4rem);
+    font-size: clamp(3.7rem, 4.5vw, 4rem);
 }
 
 .join-copy p {
     max-width: 760px;
     margin-bottom: 24px;
-    color: var(--color-white);
-    font-size: 21px;
-    line-height: 1.8;
+    color: #E0E9F3;
+    font-size: 1.75rem;
+    line-height: 1.9;
 }
 
 .join-cta {
@@ -1094,11 +1192,19 @@ button:focus-visible {
     gap: 16px;
 }
 
-.join-cta .button {
-    font-size: 24px;
+.join-section .join-button {
+    font-size: 1.9rem;
+    background: var(--color-white);
+    border-color: var(--color-white);
+    color: var(--color-deep-navy);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-
+.join-section .join-button:hover {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-deep-navy);
+}
 /* 
    12. SITE FOOTER
 */
@@ -1556,4 +1662,10 @@ button:focus-visible {
 .intro-copy .text-link {
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+/* SCHOLARSHIP SPOTLIGHT — POSITIONING ADJUSTMENT */
+.spotlight .spotlight-layout {
+    transform: translateX(30px);
+
 }
