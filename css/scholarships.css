@@ -427,6 +427,7 @@
 }
 
 
+
 /* 
    FONT SIZE ADJUSTMENTS
    Safe overrides — original styles preserved
@@ -549,4 +550,13 @@
 
 .scholarship-reminder .button {
     font-size: 1.9rem;
+}
+
+/* Smaller buttons on Scholarships page */
+.scholarship-hero-content > .button,
+.scholarship-reminder-layout > .button {
+    font-size: 0.75rem;
+    padding: 7px 12px;
+    width: fit-content;
+    min-height: 0;
 }
