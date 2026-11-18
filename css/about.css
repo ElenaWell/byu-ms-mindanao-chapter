@@ -14,9 +14,7 @@
     width: 100%;
 }
 
-/* =================================
-   ABOUT HERO
-================================= */
+/* ABOUT HERO */
 
 .about-hero {
     position: relative;
@@ -37,17 +35,27 @@
     color: var(--color-white);
 }
 
+.about-hero-layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    min-height: 670px;
+    padding-block: 70px;
+}
+
 .about-hero-content {
     position: relative;
     z-index: 2;
     width: 65%;
     max-width: 760px;
-    padding-block: 100px;
+    padding-block: 18px;
 }
 
 .about-hero .section-eyebrow {
-    margin-bottom: 27px;
+    margin-bottom: 28px;
     color: var(--color-gold);
+    font-size: 1rem;
 }
 
 .about-hero h1 {
@@ -55,26 +63,24 @@
     margin: 0;
     color: var(--color-white);
     font-family: var(--font-heading);
-    font-size: clamp(4.5rem, 7.5vw, 7rem);
+    font-size: clamp(3.6rem, 8vw, 7rem);
     font-weight: 500;
     line-height: 1.02;
-    letter-spacing: -0.055em;
+    letter-spacing: -0.045em;
 }
 
 .about-hero-content > p:last-child {
-    max-width: 580px;
+    max-width: 680px;
     margin: 28px 0 0;
     color: #E0E9F3;
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
-    line-height: 1.7;
+    font-size: 1.5rem;
+    line-height: 1.8;
 }
-
-/* Coastal city photograph */
 
 .about-hero-image {
     position: absolute;
     inset-block: 0;
-    right: 0;
+    right: -32px;
     z-index: 1;
     width: 61%;
     margin: 0;
@@ -102,6 +108,8 @@
         rgba(0, 0, 0, 0.65) 27%,
         #000000 45%
     );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }
 
 .about-hero-image figcaption {
@@ -115,6 +123,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
+
 /* HEADER IMNIDA */
 .site-header {
   position: sticky;
@@ -274,9 +283,9 @@
 }
 
 
-/* =================================
+/*
    MISSION & VISION
-================================= */
+*/
 
 .mission-vision {
     padding: 100px 32px;
@@ -317,7 +326,7 @@
 .mission-card,
 .vision-card {
     position: relative;
-    padding: 48px;
+    padding: 42px;
     overflow: hidden;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
@@ -338,17 +347,18 @@
 
 .mission-card h3,
 .vision-card h3 {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     color: var(--color-navy);
-    font-size: clamp(1.65rem, 2vw, 2rem);
+    font-size: 32px;
+    line-height: 1.2;
 }
 
 .mission-card p,
 .vision-card p {
     margin-bottom: 0;
     color: var(--color-muted);
-    font-size: 21px;
-    line-height: 1.7;
+    font-size: 24px;
+    line-height: 1.75;
 }
 
 .mission-vision-attribution {
@@ -359,11 +369,9 @@
     font-weight: 600;
     text-align: right;
 }
-
-
-/* =================================
+/*
    CHAPTER FOCUS
-================================= */
+*/
 
 .chapter-focus {
     padding: 100px 32px;
@@ -386,9 +394,10 @@
 }
 
 .chapter-focus-heading h2 {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     color: var(--color-navy);
     font-size: clamp(3rem, 5vw, 4rem);
+    line-height: 1.15;
 }
 
 .chapter-focus-heading > p:last-child {
@@ -402,15 +411,15 @@
 .chapter-focus-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
-    width: min(var(--container-width), 100%);
+    gap: 16px;
+    width: min(100%, 1500px);
     margin: 0 auto;
 }
 
 .focus-card {
     position: relative;
     min-height: 250px;
-    padding: 32px 28px;
+    padding: 36px 20px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
     background: var(--color-light-background);
@@ -427,21 +436,21 @@
 }
 
 .focus-card h3 {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     color: var(--color-navy);
-    font-size: clamp(1.65rem, 2vw, 2rem);
+    font-size: 32px;
     line-height: 1.2;
 }
 
 .focus-card p {
     margin-bottom: 0;
     color: var(--color-muted);
-    font-size: 18px;
+    font-size: 21px;
     line-height: 1.7;
 }
-/* =================================
+/* 
    OUR COMMUNITY
-================================= */
+ */
 
 .our-community {
     display: grid;
@@ -494,9 +503,9 @@
     line-height: 1.7;
 }
 
-/* =================================
+/*
    CHAPTER LEADERSHIP
-================================= */
+ */
 
 .chapter-leadership {
     padding: 100px 32px;
@@ -549,11 +558,17 @@
 
 .officer-card img {
     display: block;
-    width: 150px;
-    height: 180px;
-    margin: 0 auto 24px;
-    border-radius: var(--radius-medium);
+    width: 100%;
+    height: 400px;
     object-fit: cover;
+    margin-bottom: 24px;
+    object-position: center;
+
+    border: 5px solid var(--color-white);
+    outline: 1px solid var(--color-gold);
+    outline-offset: 5px;
+
+    box-shadow: 0 12px 30px rgba(10, 44, 80, 0.12);
 }
 
 .officer-card h3 {
@@ -571,13 +586,17 @@
     text-transform: uppercase;
 }
 
-/* =================================
+/*
    CLOSING CTA
-================================= */
+*/
+
+/*
+   CLOSING CTA
+*/
 
 .about-cta {
     padding: 100px 32px;
-    background: var(--color-deep-navy);
+    background-color: var(--color-light-navy);
     text-align: center;
 }
 
@@ -606,31 +625,98 @@
 .about-cta p {
     max-width: 680px;
     margin: 0 auto 36px;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-white);
     font-size: 21px;
     line-height: 1.7;
 }
 
-.about-cta .btn {
+.about-cta .button.button-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 30px;
-    border: 2px solid var(--color-gold);
+    min-height: 48px;
+    padding: 17px 28px;
+    border: 2px solid var(--color-white);
     border-radius: var(--radius-small);
-    background: var(--color-gold);
+    background: var(--color-white);
     color: var(--color-deep-navy);
-    font-size: 16px;
+    font-family: var(--font-body);
+    font-size: 1.35rem;
     font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
     text-decoration: none;
     transition:
-        background var(--transition),
+        background-color var(--transition),
         color var(--transition),
+        border-color var(--transition),
         transform var(--transition);
 }
 
-.about-cta .btn:hover {
+.about-cta .button.button-primary:hover {
     transform: translateY(-3px);
-    background: transparent;
-    color: var(--color-gold);
+    border-color: var(--color-gold);
+    background: var(--color-gold);
+    color: var(--color-deep-navy);
+}
+/*
+   WHO WE ARE
+ */
+
+.who-we-are {
+    padding: 100px 32px;
+    background: var(--color-white);
+}
+
+.who-we-are-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 72px;
+    width: min(var(--container-width), 100%);
+    margin: 0 auto;
+}
+
+.who-we-are-content {
+    max-width: 560px;
+}
+
+.who-we-are-content .section-eyebrow {
+    margin-bottom: 18px;
+    color: var(--color-slate);
+    font-size: 1.5rem;
+}
+
+.who-we-are-content h2 {
+    margin-bottom: 24px;
+    color: var(--color-navy);
+    font-size: clamp(3.7rem, 4.5vw, 4rem);
+    line-height: 1.15;
+}
+
+.who-we-are-content p:not(.section-eyebrow) {
+    margin-bottom: 24px;
+    color: var(--color-muted);
+    font-size: 1.75rem;
+    line-height: 1.9;
+}
+
+.who-we-are-content p:last-child {
+    margin-bottom: 0;
+}
+
+.who-we-are-image {
+    width: 100%;
+    height: 440px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius-medium);
+    box-shadow: 0 16px 40px rgba(6, 26, 50, 0.10);
+}
+
+.who-we-are-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
