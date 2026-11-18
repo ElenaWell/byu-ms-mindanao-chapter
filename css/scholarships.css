@@ -2,7 +2,10 @@
    SCHOLARSHIPS PAGE
  */
 
-/* Hero */
+
+/* ========================================
+   SCHOLARSHIP HERO
+======================================== */
 
 .scholarship-hero {
     position: relative;
@@ -23,6 +26,8 @@
     color: var(--color-white);
 }
 
+/* Decorative Gold Circle */
+
 .scholarship-hero::after {
     position: absolute;
     right: -100px;
@@ -39,17 +44,64 @@
     pointer-events: none;
 }
 
+/* Hero Content */
+
 .scholarship-hero-content {
     position: relative;
-    z-index: 1;
-    padding-block: clamp(90px, 12vw, 160px);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 670px;
+    padding-block: 70px;
     animation: scholarship-enter 650ms ease both;
 }
+
+/* Hero Image */
+
+.scholarship-hero-visual {
+    position: absolute;
+    inset-block: 0;
+    right: -32px;
+    z-index: 1;
+    width: 61%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.scholarship-hero-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.12) 10%,
+        rgba(0, 0, 0, 0.65) 27%,
+        #000000 45%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.12) 10%,
+        rgba(0, 0, 0, 0.65) 27%,
+        #000000 45%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+/* Eyebrow */
 
 .scholarship-hero .eyebrow {
     margin-bottom: 28px;
     color: var(--color-gold);
 }
+
+/* Main Heading */
 
 .scholarship-hero h1 {
     max-width: 900px;
@@ -66,6 +118,8 @@
     color: var(--color-gold);
 }
 
+/* Description */
+
 .scholarship-hero-description {
     max-width: 680px;
     margin-bottom: 32px;
@@ -73,6 +127,8 @@
     font-size: clamp(1.1rem, 2vw, 1.4rem);
     line-height: 1.8;
 }
+
+/* Primary Button */
 
 .scholarship-hero .button-primary {
     background: var(--color-gold);
@@ -84,12 +140,15 @@
     background: var(--color-white);
 }
 
+/* Supporting Note */
+
 .scholarship-hero-note {
     max-width: 650px;
     margin: 24px 0 0;
     color: #D1DDEC;
     font-size: 0.95rem;
 }
+
 
 /* Introduction */
 
