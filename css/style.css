@@ -423,7 +423,6 @@ button:focus-visible {
 }
 
 .hero-layout {
-    position: relative;
     display: flex;
     align-items: center;
     min-height: 670px;
@@ -558,7 +557,7 @@ button:focus-visible {
 .hero-visual {
     position: absolute;
     inset-block: 0;
-    right: -32px;
+    right: 0;
     z-index: 1;
     width: 61%;
     margin: 0;
